@@ -19,10 +19,10 @@ const connectDB = async () => {
 };
 
 app.get("/", (req, res) => {
-  res.send({ title: "Social App" });
+  res.send({ title: "Social App Test" });
 });
 
-app.get("/add-note", async (req, res) => {
+app.get("/add-node", async (req, res) => {
   try {
     await Book.insertMany[
       ({
