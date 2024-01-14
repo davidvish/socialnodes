@@ -9,7 +9,6 @@ const app = express();
 
 const morgan = require("morgan");
 const dotevn = require("dotenv");
-const mongoos = require("mongoose");
 const helmet = require("helmet");
 const nodemon = require("nodemon");
 
