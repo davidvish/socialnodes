@@ -1,7 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const mongoos = require("mongoose");
-
+const userRouter = require('./router/users')
+const authRouter = require('./router/auth')
+const postRouter = require('./router/post')
+const commentRouter = require('./router/comment')
 const app = express();
 
 const PORT = process.env.PORT || 3000;
