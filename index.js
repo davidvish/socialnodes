@@ -1,7 +1,6 @@
 require("dotenv").config();
 const express = require("express");
 const mongoos = require("mongoose");
-const Book = require("./models/book");
 
 const app = express();
 
