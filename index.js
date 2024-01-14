@@ -25,6 +25,13 @@ const connectDB = async () => {
   }
 };
 
+//middleware
+
+app.use(express.json());
+app.use(helmet());
+app.use(morgan("common"));
+dotevn.config();
+
 //API Url 
 app.use("/social/api/users",userRouter)
 app.use("/social/api/auth",authRouter)
