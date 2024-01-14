@@ -25,6 +25,12 @@ const connectDB = async () => {
   }
 };
 
+//API Url 
+app.use("/social/api/users",userRouter)
+app.use("/social/api/auth",authRouter)
+app.use("/social/api/post",postRouter)
+app.use("/social/api/post/comment",commentRouter)
+
 app.get("/", (req, res) => {
   res.send({ title: "Social App Node Test t" });
 });
