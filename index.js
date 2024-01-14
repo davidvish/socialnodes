@@ -19,7 +19,7 @@ const connectDB = async () => {
 };
 
 app.get("/", (req, res) => {
-  res.send({ title: "Social App Test" });
+  res.send({ title: "Social App Node Test" });
 });
 
 app.get("/add-node", async (req, res) => {
