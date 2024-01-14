@@ -1,35 +1,9 @@
 require("dotenv").config();
 const express = require("express");
 const mongoos = require("mongoose");
-
-const express = require("express");
-//API export calls
-const userRouter = require('./router/users')
-const authRouter = require('./router/auth')
-const postRouter = require('./router/post')
-const commentRouter = require('./router/comment')
-
-const morgan = require("morgan");
-const dotevn = require("dotenv");
-const mongoos = require("mongoose");
-const helmet = require("helmet");
-const nodemon = require("nodemon");
-
-//middleware
-
-app.use(express.json());
-app.use(helmet());
-app.use(morgan("common"));
-dotevn.config();
+const Book = require("./models/book");
 
 const app = express();
-
-//API Url 
-app.use("/social/api/users",userRouter)
-app.use("/social/api/auth",authRouter)
-app.use("/social/api/post",postRouter)
-app.use("/social/api/post/comment",commentRouter)
-
 
 const PORT = process.env.PORT || 3000;
 
@@ -45,10 +19,35 @@ const connectDB = async () => {
 };
 
 app.get("/", (req, res) => {
-  res.send({ title: "Social App with monogooDB" });
+  res.send({ title: "Social App Node js Test" });
 });
 
+app.get("/add-node", async (req, res) => {
+  try {
+    await Book.insertMany[
+      ({
+        title: "Sone of Book",
+        body: "Body Text Check",
+      },
+      {
+        title: "Sone of Book",
+        body: "Body Text Check",
+      })
+    ];
+    res.send('Added Data')
+  } catch (error) {
+    console.log(error);
+  }
+});
 
+app.get("/books", async (req, res) => {
+  const book = await Book.find();
+  if (book) {
+    res.json(book);
+  } else {
+    res.send("Something went wrong.");
+  }
+});
 
 connectDB()
   .then(() => {
