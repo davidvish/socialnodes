@@ -18,7 +18,7 @@ const connectDB = async () => {
 };
 
 app.get("/", (req, res) => {
-  res.send({ title: "Social App Node js Test" });
+  res.send({ title: "Social App Node Test" });
 });
 
 
