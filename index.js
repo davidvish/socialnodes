@@ -7,6 +7,12 @@ const postRouter = require('./router/post')
 const commentRouter = require('./router/comment')
 const app = express();
 
+const morgan = require("morgan");
+const dotevn = require("dotenv");
+const mongoos = require("mongoose");
+const helmet = require("helmet");
+const nodemon = require("nodemon");
+
 const PORT = process.env.PORT || 3000;
 
 mongoos.set("strictQuery", false);
@@ -21,7 +27,7 @@ const connectDB = async () => {
 };
 
 app.get("/", (req, res) => {
-  res.send({ title: "Social App Node Test" });
+  res.send({ title: "Social App Node Test t" });
 });
 
 
