@@ -1,10 +1,10 @@
 require("dotenv").config();
 const express = require("express");
 const mongoos = require("mongoose");
-const userRouter = require('./router/users')
-const authRouter = require('./router/auth')
-const postRouter = require('./router/post')
-const commentRouter = require('./router/comment')
+const userRouter = require("./router/users");
+const authRouter = require("./router/auth");
+const postRouter = require("./router/post");
+const commentRouter = require("./router/comment");
 const app = express();
 
 const morgan = require("morgan");
@@ -32,19 +32,15 @@ app.use(helmet());
 app.use(morgan("common"));
 dotevn.config();
 
-//API Url 
-app.use("/social/api/users",userRouter)
-app.use("/social/api/auth",authRouter)
-app.use("/social/api/post",postRouter)
-app.use("/social/api/post/comment",commentRouter)
+//API Url
+app.use("/social/api/users", userRouter);
+app.use("/social/api/auth", authRouter);
+app.use("/social/api/post", postRouter);
+app.use("/social/api/post/comment", commentRouter);
 
 app.get("/", (req, res) => {
-  res.send({ title: "Welcome back to Social Connection" });
+  res.send({ title: "Welcome back to", name: "Social Connection" });
 });
-
-
-
-
 
 connectDB()
   .then(() => {
