@@ -42,6 +42,10 @@ app.get("/", (req, res) => {
   res.send({ title: "Welcome back to", name: "Social Connection" });
 });
 
+app.get("/logo", (req, res) => {
+  res.send({ Image: "./assest/logo.png" });
+});
+
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
