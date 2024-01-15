@@ -42,7 +42,7 @@ app.get("/", (req, res) => {
   res.send({ title: "Welcome back to", name: "Social Connection" });
 });
 
-app.get("/logo", (req, res) => {
+app.get("/social/api/logo", (req, res) => {
   res.send({ Image: "./assest/logo.png" });
 });
 
