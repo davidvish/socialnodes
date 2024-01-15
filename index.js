@@ -39,7 +39,7 @@ app.use("/social/api/post",postRouter)
 app.use("/social/api/post/comment",commentRouter)
 
 app.get("/", (req, res) => {
-  res.send({ title: "Social App Node Test" });
+  res.send({ title: "Welcome back to Social Connect" });
 });
 
 
