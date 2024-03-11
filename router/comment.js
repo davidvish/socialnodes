@@ -64,7 +64,7 @@ router.put("/update/:id", async (req, res) => {
 });
 
 //get comment by post id
-router.get("/comment/:id", async (req, res) => {
+router.get("/get/:id", async (req, res) => {
   try {
     Comment.find({ postId: req.params.id }).then((comment) => {
       res.status(200).json({
