@@ -31,7 +31,7 @@ router.delete("/delete/:id", async (req, res) => {
         .then(() => {
           res
             .status(200)
-            .json({ status: true, message: "Comment update successfully" });
+            .json({ status: true, message: "Comment delete successfully" });
         })
         .catch((err) => {
           res.status(201).json(err);
